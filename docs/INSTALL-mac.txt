@@ -1,0 +1,30 @@
+Brasa — установка на Mac
+
+1. Откройте Brasa-<версия>.pkg.
+   Если macOS пишет «не удаётся проверить разработчика»: правый клик по файлу → «Открыть» → «Открыть».
+   (Или «Системные настройки» → «Конфиденциальность и безопасность» → «Всё равно открыть».)
+2. Нажимайте «Продолжить». Установщик сам положит:
+   VST3        → ~/Library/Audio/Plug-Ins/VST3/Brasa.vst3
+   Audio Unit  → ~/Library/Audio/Plug-Ins/Components/Brasa.component
+   Старая версия заменяется.
+3. Закройте FL Studio перед установкой. После неё: Options → Manage plugins → Find installed plugins.
+   Brasa — это эффект, его ставят в слот микшера.
+
+Ручки
+   Drive      сила перегруза (0–10 = +0…+30 дБ на вход схемы)
+   Punish     ещё +20 дБ
+   Circuit    Cinta / Consola / Germanio / Triodo / Pentodo
+   Low Cut    срез низа ДО перегруза (Thump: горб на частоте среза, как у ленты)
+   Tone       мягкий наклон тёмно/светло ДО перегруза: меняет, что именно искажается
+   High Cut   срез верха ПОСЛЕ перегруза (Steep: 30 дБ/окт вместо 6)
+   Output     подстройка выхода; Auto сам гасит громкость, которую добавил Drive
+   Mix        смесь с сухим сигналом (параллельная обработка, задержка выровнена)
+   HQ         8x оверсемплинг вместо 2x
+
+Вручную (архив Brasa-macOS.zip)
+   Brasa.vst3       →  ~/Library/Audio/Plug-Ins/VST3/
+   Brasa.component  →  ~/Library/Audio/Plug-Ins/Components/
+   Папка ~/Library скрыта: в Finder нажмите Cmd+Shift+G и вставьте путь.
+   Затем в «Терминале»:
+   xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/Brasa.vst3
+   xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/Components/Brasa.component
